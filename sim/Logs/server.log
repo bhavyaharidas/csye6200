@@ -1,0 +1,130 @@
+Nov 01, 2018 2:03:17 PM edu.neu.csye6200.sim.RegistryIO <init>
+INFO: Constructing a RegistryIO instance
+Nov 01, 2018 2:03:17 PM edu.neu.csye6200.sim.PlantRoster <init>
+INFO: Constructing a PlantRoster instance
+Nov 01, 2018 2:03:17 PM edu.neu.csye6200.sim.PlantRoster createPlants
+INFO: Created plant instances - Cherry, Cedar, Juniper, Fir, Sequoia, Redwood, Redbud
+Nov 01, 2018 2:03:19 PM edu.neu.csye6200.sim.PlantRoster getPlants
+INFO: Retrieving Plants Map
+Nov 01, 2018 2:03:22 PM edu.neu.csye6200.sim.PlantTest run
+INFO: Invoking method to save plant instances
+Nov 01, 2018 2:03:22 PM edu.neu.csye6200.sim.PlantRoster getPlants
+INFO: Retrieving Plants Map
+Nov 01, 2018 2:03:22 PM edu.neu.csye6200.sim.RegistryIO save
+INFO: Saving plant instances to C:\Coursework\CSYE6200\projects\learning\csye6200\src\edu\neu\csye6200\sim\Registry\ in separate txt files.
+Nov 01, 2018 2:03:22 PM edu.neu.csye6200.sim.RegistryIO save
+INFO: Saved object Cherry as Cherry.txt
+Nov 01, 2018 2:03:22 PM edu.neu.csye6200.sim.RegistryIO save
+INFO: Saved object Cedar as Cedar.txt
+Nov 01, 2018 2:03:22 PM edu.neu.csye6200.sim.RegistryIO save
+INFO: Saved object Juniper as Juniper.txt
+Nov 01, 2018 2:03:22 PM edu.neu.csye6200.sim.RegistryIO save
+INFO: Saved object Fir as Fir.txt
+Nov 01, 2018 2:03:22 PM edu.neu.csye6200.sim.RegistryIO save
+INFO: Saved object Sequoia as Sequoia.txt
+Nov 01, 2018 2:03:22 PM edu.neu.csye6200.sim.RegistryIO save
+INFO: Saved object Redwood as Redwood.txt
+Nov 01, 2018 2:03:22 PM edu.neu.csye6200.sim.RegistryIO save
+INFO: Saved object Redbud as Redbud.txt
+Nov 01, 2018 2:03:24 PM edu.neu.csye6200.sim.PlantTest run
+INFO: Invoking method to load plant instances from disk
+Nov 01, 2018 2:03:24 PM edu.neu.csye6200.sim.RegistryIO load
+INFO: Loading all class instances saved as txt files in - C:\Coursework\CSYE6200\projects\learning\csye6200\src\edu\neu\csye6200\sim\Registry\
+Nov 01, 2018 2:03:24 PM edu.neu.csye6200.sim.RegistryIO load
+INFO: Loading Cedar.txt
+Nov 01, 2018 2:03:24 PM edu.neu.csye6200.sim.RegistryIO load
+INFO: Loaded Cedar
+Nov 01, 2018 2:03:24 PM edu.neu.csye6200.sim.RegistryIO load
+INFO: Loading Cherry.txt
+Nov 01, 2018 2:03:24 PM edu.neu.csye6200.sim.RegistryIO load
+INFO: Loaded Cherry
+Nov 01, 2018 2:03:24 PM edu.neu.csye6200.sim.RegistryIO load
+INFO: Loading Fir.txt
+Nov 01, 2018 2:03:24 PM edu.neu.csye6200.sim.RegistryIO load
+INFO: Loaded Fir
+Nov 01, 2018 2:03:24 PM edu.neu.csye6200.sim.RegistryIO load
+INFO: Loading Juniper.txt
+Nov 01, 2018 2:03:24 PM edu.neu.csye6200.sim.RegistryIO load
+INFO: Loaded Juniper
+Nov 01, 2018 2:03:24 PM edu.neu.csye6200.sim.RegistryIO load
+INFO: Loading Redbud.txt
+Nov 01, 2018 2:03:24 PM edu.neu.csye6200.sim.RegistryIO load
+INFO: Loaded Redbud
+Nov 01, 2018 2:03:24 PM edu.neu.csye6200.sim.RegistryIO load
+INFO: Loading Redwood.txt
+Nov 01, 2018 2:03:24 PM edu.neu.csye6200.sim.RegistryIO load
+INFO: Loaded Redwood
+Nov 01, 2018 2:03:24 PM edu.neu.csye6200.sim.RegistryIO load
+INFO: Loading Sequoia.txt
+Nov 01, 2018 2:03:24 PM edu.neu.csye6200.sim.RegistryIO load
+INFO: Loaded Sequoia
+Nov 01, 2018 2:03:40 PM edu.neu.csye6200.sim.PlantTest run
+INFO: Invoking method to save plant instances
+Nov 01, 2018 2:03:40 PM edu.neu.csye6200.sim.PlantRoster getPlants
+INFO: Retrieving Plants Map
+Nov 01, 2018 2:03:40 PM edu.neu.csye6200.sim.RegistryIO save
+INFO: Saving plant instances to C:\Coursework\CSYE6200\projects\learning\csye6200\src\edu\neu\csye6200\sim\Registry\ in separate txt files.
+Nov 01, 2018 2:03:40 PM edu.neu.csye6200.sim.RegistryIO save
+INFO: Saved object Cherry as Cherry.txt
+Nov 01, 2018 2:03:40 PM edu.neu.csye6200.sim.RegistryIO save
+INFO: Saved object Cedar as Cedar.txt
+Nov 01, 2018 2:03:40 PM edu.neu.csye6200.sim.RegistryIO save
+INFO: Saved object Juniper as Juniper.txt
+Nov 01, 2018 2:03:40 PM edu.neu.csye6200.sim.RegistryIO save
+INFO: Saved object Fir as Fir.txt
+Nov 01, 2018 2:03:40 PM edu.neu.csye6200.sim.RegistryIO save
+INFO: Saved object Sequoia as Sequoia.txt
+Nov 01, 2018 2:03:40 PM edu.neu.csye6200.sim.RegistryIO save
+INFO: Saved object Redwood as Redwood.txt
+Nov 01, 2018 2:03:40 PM edu.neu.csye6200.sim.RegistryIO save
+INFO: Saved object Redbud as Redbud.txt
+Nov 01, 2018 2:03:41 PM edu.neu.csye6200.sim.PlantTest run
+INFO: Invoking method to load plant instances from disk
+Nov 01, 2018 2:03:41 PM edu.neu.csye6200.sim.RegistryIO load
+INFO: Loading all class instances saved as txt files in - C:\Coursework\CSYE6200\projects\learning\csye6200\src\edu\neu\csye6200\sim\Registry\
+Nov 01, 2018 2:03:41 PM edu.neu.csye6200.sim.RegistryIO load
+INFO: Loading Cedar.txt
+Nov 01, 2018 2:03:41 PM edu.neu.csye6200.sim.RegistryIO load
+INFO: Loaded Cedar
+Nov 01, 2018 2:03:41 PM edu.neu.csye6200.sim.RegistryIO load
+INFO: Loading Cherry.txt
+Nov 01, 2018 2:03:41 PM edu.neu.csye6200.sim.RegistryIO load
+INFO: Loaded Cherry
+Nov 01, 2018 2:03:41 PM edu.neu.csye6200.sim.RegistryIO load
+INFO: Loading Fir.txt
+Nov 01, 2018 2:03:41 PM edu.neu.csye6200.sim.RegistryIO load
+INFO: Loaded Fir
+Nov 01, 2018 2:03:41 PM edu.neu.csye6200.sim.RegistryIO load
+INFO: Loading Juniper.txt
+Nov 01, 2018 2:03:41 PM edu.neu.csye6200.sim.RegistryIO load
+INFO: Loaded Juniper
+Nov 01, 2018 2:03:41 PM edu.neu.csye6200.sim.RegistryIO load
+INFO: Loading Redbud.txt
+Nov 01, 2018 2:03:41 PM edu.neu.csye6200.sim.RegistryIO load
+INFO: Loaded Redbud
+Nov 01, 2018 2:03:41 PM edu.neu.csye6200.sim.RegistryIO load
+INFO: Loading Redwood.txt
+Nov 01, 2018 2:03:41 PM edu.neu.csye6200.sim.RegistryIO load
+INFO: Loaded Redwood
+Nov 01, 2018 2:03:41 PM edu.neu.csye6200.sim.RegistryIO load
+INFO: Loading Sequoia.txt
+Nov 01, 2018 2:03:41 PM edu.neu.csye6200.sim.RegistryIO load
+INFO: Loaded Sequoia
+Nov 01, 2018 2:03:43 PM edu.neu.csye6200.sim.PlantRoster sortAndDisplayPlants
+INFO: Sorting plants based on specimen Id
+Nov 01, 2018 2:03:54 PM edu.neu.csye6200.sim.PlantTest run
+INFO: Exiting
+Nov 12, 2018 3:31:57 PM edu.neu.csye6200.sim.RegistryIO <init>
+INFO: Constructing a RegistryIO instance
+Nov 12, 2018 3:31:57 PM edu.neu.csye6200.sim.PlantRoster <init>
+INFO: Constructing a PlantRoster instance
+Nov 12, 2018 3:31:57 PM edu.neu.csye6200.sim.PlantRoster createPlants
+INFO: Created plant instances - Cherry, Cedar, Juniper, Fir, Sequoia, Redwood, Redbud
+Nov 12, 2018 3:32:02 PM edu.neu.csye6200.sim.PlantRoster getPlants
+INFO: Retrieving Plants Map
+Nov 12, 2018 3:32:04 PM edu.neu.csye6200.sim.PlantRoster getPlants
+INFO: Retrieving Plants Map
+Nov 12, 2018 3:32:05 PM edu.neu.csye6200.sim.PlantRoster getPlants
+INFO: Retrieving Plants Map
+Nov 12, 2018 3:32:08 PM edu.neu.csye6200.sim.PlantRoster getPlants
+INFO: Retrieving Plants Map

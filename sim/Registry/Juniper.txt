@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<java version="10.0.2" class="java.beans.XMLDecoder">
+ <object class="edu.neu.csye6200.sim.Plant">
+  <void property="baseStem">
+   <object class="edu.neu.csye6200.sim.Stem" id="Stem0">
+    <void property="direction">
+     <double>1.57</double>
+    </void>
+    <void property="id">
+     <int>5</int>
+    </void>
+    <void property="length">
+     <int>2</int>
+    </void>
+    <void property="startLoc">
+     <array class="int" length="2"/>
+    </void>
+   </object>
+  </void>
+  <void property="length">
+   <double>1.0</double>
+  </void>
+  <void property="specimenId">
+   <int>7</int>
+  </void>
+  <void property="stemFamily">
+   <object class="java.util.ArrayList">
+    <void method="add">
+     <object idref="Stem0"/>
+    </void>
+   </object>
+  </void>
+  <void property="typeName">
+   <string>Juniper</string>
+  </void>
+ </object>
+</java>

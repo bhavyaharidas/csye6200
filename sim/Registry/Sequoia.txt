@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<java version="10.0.2" class="java.beans.XMLDecoder">
+ <object class="edu.neu.csye6200.sim.Plant">
+  <void property="childStem">
+   <object class="java.util.ArrayList">
+    <void method="add">
+     <object class="edu.neu.csye6200.sim.Stem" id="Stem0">
+      <void property="direction">
+       <double>0.5235987755982988</double>
+      </void>
+      <void property="id">
+       <int>9</int>
+      </void>
+      <void property="length">
+       <int>2</int>
+      </void>
+      <void property="startLoc">
+       <array class="int" length="2" id="intArray0"/>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="edu.neu.csye6200.sim.Stem" id="Stem1">
+      <void property="direction">
+       <double>1.0471975511965976</double>
+      </void>
+      <void property="id">
+       <int>10</int>
+      </void>
+      <void property="length">
+       <int>2</int>
+      </void>
+      <void property="startLoc">
+       <object idref="intArray0"/>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="edu.neu.csye6200.sim.Stem" id="Stem2">
+      <void property="direction">
+       <double>1.5707963267948966</double>
+      </void>
+      <void property="id">
+       <int>11</int>
+      </void>
+      <void property="length">
+       <int>2</int>
+      </void>
+      <void property="startLoc">
+       <object idref="intArray0"/>
+      </void>
+     </object>
+    </void>
+   </object>
+  </void>
+  <void property="length">
+   <double>2.0</double>
+  </void>
+  <void property="specimenId">
+   <int>4</int>
+  </void>
+  <void property="stemFamily">
+   <object class="java.util.ArrayList">
+    <void method="add">
+     <object idref="Stem0"/>
+    </void>
+    <void method="add">
+     <object idref="Stem1"/>
+    </void>
+    <void method="add">
+     <object idref="Stem2"/>
+    </void>
+   </object>
+  </void>
+  <void property="typeName">
+   <string>Sequoia</string>
+  </void>
+  <void property="width">
+   <double>1.0</double>
+  </void>
+ </object>
+</java>
