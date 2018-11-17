@@ -3,6 +3,9 @@ package edu.neu.csye6200.ui;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.FlowLayout;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
+import java.awt.Point;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
@@ -47,7 +50,11 @@ public abstract class BGApp implements ActionListener {
 
 		frame.add(getMainPanel(), BorderLayout.CENTER);
 		scrollPane = new JScrollPane(mainPanel);
-		frame.add(scrollPane);
+		//frame.add(scrollPane);
+		
+		
+		BGPanel panel = new BGPanel();
+		frame.add(panel);
 	}
 
 	// Returns a JPanel - a drawable region, that we'll draw into
@@ -67,6 +74,7 @@ public abstract class BGApp implements ActionListener {
 		System.setErr(printStream);*/
 		
 		label = new JLabel("Enter name of plant: ");
+		label.setForeground(Color.white);
 		
 		startBtn.addActionListener(this);
 		stopBtn.addActionListener(this);
@@ -75,7 +83,7 @@ public abstract class BGApp implements ActionListener {
 		mainPanel.add(startBtn);
 		mainPanel.add(stopBtn);
 		mainPanel.add(textArea);
-		mainPanel.setBackground(Color.white);
+		mainPanel.setBackground(Color.black);
 		return mainPanel;
 	}
 
