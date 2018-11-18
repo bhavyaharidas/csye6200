@@ -18,8 +18,8 @@ public class BGGeneration extends Thread {
 	private int specimenId;
 	private double totalLength = 0;
 	private double totalWidth = 0;
-	private BGStem firstGen = new BGStem();
-	private ArrayList<BGStem> stemFamily;
+	private BGStem firstGen = new BGStem(); // base stem
+	private ArrayList<BGStem> stemFamily; // a list of all child stems
 	private BGRule rule;
 
 	public BGGeneration(String name) {
@@ -31,39 +31,46 @@ public class BGGeneration extends Thread {
 		this.stemFamily = new ArrayList<BGStem>();
 	}
 
+	// Sets the boolean that keeps the thread continuing, to false
 	public void setDone(boolean done) {
 		this.done = done;
 	}
 
+	// sets base stem
 	public void setFirstGen(BGStem firstGen) {
 		this.firstGen = firstGen;
 	}
 
+	// returns the master list of all child stems
 	public ArrayList<BGStem> getStemFamily() {
 		return stemFamily;
 	}
 
+	// adds a stem to the master list of all stems
 	public void addToStemFamily(BGStem stem) {
 		this.stemFamily.add(stem);
 	}
 
+	// The method invoked when a thread is begun
 	public void run() {
 		while (!done) {
 			grow();
 			calculateDimensions();
 			printGeneration();
 			try {
-				Thread.sleep(5000L);
+				Thread.sleep(5000L); // Induces a 5 second between each growth cycle
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
 		}
 	}
 
+	// Invokes a recursive method that grows new stems at the end stems
 	public void grow() {
 		growStem(firstGen);
 	}
 
+	// Recursively finds the end stems and grows new child stems
 	public void growStem(BGStem child) {
 		if (child.hasChildren()) {
 			for (BGStem stem : child.getChildStem()) {
@@ -75,6 +82,7 @@ public class BGGeneration extends Thread {
 
 	}
 
+	// Displays plant details including details of all of its stems
 	public void printGeneration() {
 		System.out.println(toString());
 		System.out.println(printHeader());
@@ -82,25 +90,31 @@ public class BGGeneration extends Thread {
 			System.out.println(stem.toString());
 		}
 	}
-	
+
+	// Overridden method to display basic plant parameters
 	public String toString() {
-		String p = "\n\nName - " + typeName + "\nSpecimen Id = " + specimenId + "\nLength - " + totalLength + "\nWidth - "
-				+ totalWidth + "\nTotal Stem count - " + stemFamily.size();
+		String p = "\n\nName - " + typeName + "\nSpecimen Id = " + specimenId + "\nLength - " + totalLength
+				+ "\nWidth - " + totalWidth + "\nTotal Stem count - " + stemFamily.size();
 
 		return p;
 	}
 
+	// Creates a new Generation of stems based ont he rules passed on from BGRule
 	private void createGeneration(BGStem stem) {
 
-		int x = stem.getStartLoc()[0] + (int) (stem.getLength() * Math.cos(Math.toRadians(stem.getDirection())));
-		int y = stem.getStartLoc()[1] + (int) (stem.getLength() * Math.sin(Math.toRadians(stem.getDirection())));
+		int x = stem.getStartLoc()[0] + (int) (stem.getLength() * Math.cos(Math.toRadians(stem.getDirection()))); // new
+																													// x
+																													// location
+		int y = stem.getStartLoc()[1] + (int) (stem.getLength() * Math.sin(Math.toRadians(stem.getDirection()))); // new
+																													// y
+																													// location
 		int[] newStartLoc = new int[] { x, y }; // New start location
 
-		int length = rule.lengthLookup(totalLength,totalWidth); // New length
+		int length = rule.lengthLookup(totalLength, totalWidth); // New length
 		Double[] angles = rule.getAngleLookUp().get(stem.getDirection()); // New set of angles
 
 		for (double angle : angles) {
-			BGStem newStem = new BGStem(newStartLoc, length, angle);
+			BGStem newStem = new BGStem(newStartLoc, length, angle); // child stem
 			stem.addChildStem(newStem);
 			this.stemFamily.add(newStem);
 		}
@@ -112,7 +126,8 @@ public class BGGeneration extends Thread {
 						"Start Location", '|', "Direction", '|', "Length")
 				+ "\n" + String.format("%0" + 105 + "d", 0).replace("0", "*");
 	}
-	
+
+	// Calculates plant dimensions - length and width
 	private void calculateDimensions() {
 		ArrayList<Integer> xcoords = new ArrayList<Integer>(); // to store all open x end points
 		ArrayList<Integer> ycoords = new ArrayList<Integer>(); // to store all open y end points

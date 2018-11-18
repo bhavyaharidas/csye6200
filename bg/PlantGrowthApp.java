@@ -7,33 +7,25 @@ import javax.swing.JTextArea;
 
 import edu.neu.csye6200.ui.BGApp;
 
+//Holds starting point of the application
 public class PlantGrowthApp extends BGApp {
 
-	public PlantGrowthApp(JTextArea textArea) {
-		super(textArea);
-
-	}
-
-	ArrayList<BGRule> rules = new ArrayList<BGRule>();
 	private BGGenerationSet plants;
 
-	public void run() {
-	}
-
+	// Overridden BGApp method to execute events on "start" button click
 	@Override
 	public void startAction() {
 		plants = new BGGenerationSet(new ArrayList<String>(Arrays.asList(textfield.getText().split(","))));
 		plants.createPlants();
 	}
 
+	// Overridden BGApp method to execute events on "stop" button click
 	@Override
 	public void stopAction() {
 		plants.setDone(true);
 	}
 
 	public static void main(String[] args) {
-		JTextArea textArea = new JTextArea();
-		PlantGrowthApp app = new PlantGrowthApp(textArea);
+		PlantGrowthApp app = new PlantGrowthApp();
 	}
-
 }

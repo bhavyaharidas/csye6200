@@ -34,42 +34,47 @@ public class BGStem {
 
 	}
 
+	// Returns Stem Id
 	public int getId() {
 		return id;
 	}
 
-	public void setId(int id) {
-		this.id = id;
-	}
-
+	// Returns start location of a stem
 	public int[] getStartLoc() {
 		return startLoc;
 	}
 
+	// Assigns start location of a stem
 	public void setStartLoc(int[] startLoc) {
 		this.startLoc = startLoc;
 	}
 
+	// Returns length of a stem
 	public int getLength() {
 		return length;
 	}
 
+	// Sets length of a stem
 	public void setLength(int length) {
 		this.length = length;
 	}
 
+	// Returns direction of a stem
 	public double getDirection() {
 		return direction;
 	}
 
+	// Sets direction of a stem
 	public void setDirection(double direction) {
 		this.direction = direction;
 	}
 
+	// Returns the list of child stems of a stem
 	public List<BGStem> getChildStem() {
 		return childStem;
 	}
 
+	// Adds a stem to the list of child stems of a stem
 	public void addChildStem(BGStem childStem) {
 		if (this.childStem == null) {
 			this.childStem = new ArrayList<BGStem>();
@@ -77,22 +82,12 @@ public class BGStem {
 		this.childStem.add(childStem);
 	}
 
+	// Removes a stem from the list of child stems of a stem
 	public void removeChild(BGStem childStem) {
 		this.childStem.remove(childStem.id);
 	}
 
-	public int getChildCount() {
-		int count = 1;
-		if (!this.hasChildren()) {
-			return 1;
-		} else {
-			for (BGStem child : this.childStem) {
-				count += child.getChildCount();
-			}
-		}
-		return count;
-	}
-
+	// Returns a boolean indicating if the stem is an end stem
 	public Boolean hasChildren() {
 		return this.childStem != null;
 	}

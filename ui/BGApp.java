@@ -30,23 +30,21 @@ public abstract class BGApp implements ActionListener {
 	private JScrollPane scrollPane;
 	JTextArea textArea = new JTextArea();
 
-	public BGApp(JTextArea textArea) {
+	public BGApp() {
 		initGUI();
-		this.textArea = textArea;
 	}
 
 	private void initGUI() {
 		frame = new JFrame();
 		frame.setTitle("BGAppUI");
-		frame.setSize(400, 300); // Set the size to something reasonable
+		frame.setSize(400, 300); 
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // If we press close button, exit
 		frame.setVisible(true);
 
 		frame.setLayout(new BorderLayout());
-		// frame.setLayeredPane(new BorderLayout());
 
 		frame.add(getMainPanel(), BorderLayout.CENTER);
-		scrollPane = new JScrollPane(mainPanel);
+		scrollPane = new JScrollPane(mainPanel); // To scroll window upon expansion
 		frame.add(scrollPane);
 	}
 
@@ -79,6 +77,7 @@ public abstract class BGApp implements ActionListener {
 		return mainPanel;
 	}
 
+	//Overridden ActionListener method that listens to button click and takes different actions for "start" and "stop" clicks
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		if (e.getActionCommand() == "Start")
@@ -87,9 +86,11 @@ public abstract class BGApp implements ActionListener {
 			stopAction();
 	}
 
+	//Handles start button 
 	public void startAction() {
 	}
 
+	//Handles stop button
 	public void stopAction() {
 	}
 
