@@ -10,15 +10,25 @@ import java.util.logging.Logger;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JTextField;
+
+import net.java.dev.designgridlayout.DesignGridLayout;
 
 public class MyAppUI implements ActionListener{
 
 	private Logger log = Logger.getLogger(MyAppUI.class.getName());
 	private JFrame frame = null;   // Window
+	
 	private JPanel mainPanel = null; // Panel - Drawable Region
+	private JPanel drawPanel = null;
+	
 	private JButton startBtn = null;
 	private JButton stopBtn = null;
+	
+	private JTextField nameTF = new JTextField(); //A name input field
+	private JTextField idTF = new JTextField(); //An ID input field
 	
 	// Constructor
 	
@@ -33,25 +43,52 @@ public class MyAppUI implements ActionListener{
 		frame.setTitle("MyAppUI");
 		frame.setSize(400,300);  // Set the size to something reasonable
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // If we press close button, exit
-		frame.setVisible(true);
 
 		frame.setLayout(new BorderLayout());
-		//frame.setLayeredPane(new BorderLayout());
-		
-		frame.add(getMainPanel(),BorderLayout.CENTER);
+		frame.add(getMainPanel(),BorderLayout.NORTH); //Buttons on top
+		frame.add(getDrawPanel(), BorderLayout.CENTER); //Drawing in the center
+		frame.setVisible(true);
 	}
 	
-	// Returns a JPanel - a drawable region, that we'll draw into
-	public JPanel getMainPanel() {
+	private JPanel getDrawPanel() {
+		drawPanel = new MyPanel();
+		return drawPanel;
+	}
+	
+	// Returns a JPanel that contains control buttons
+	private JPanel getMainPanel() {
 		mainPanel = new JPanel();
-		mainPanel.setLayout(new FlowLayout());
+		//mainPanel.setLayout(new FlowLayout());	//Flow from left to right
+		DesignGridLayout pLayout = new DesignGridLayout(mainPanel);
 		startBtn = new JButton("Start");
 		stopBtn = new JButton("Stop");
+		
 		startBtn.addActionListener(this);
 		stopBtn.addActionListener(this);
-		mainPanel.add(startBtn);
-		mainPanel.add(stopBtn);
-		mainPanel.setBackground(Color.black);
+		
+		startBtn.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				System.out.println("Do start operation - Anonymous");
+				drawPanel.repaint(); //Ask for a panel redraw - let the UI Thread do it!
+			}
+		});
+		stopBtn.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				System.out.println("Do stop operation - Anonymous");
+			}
+		});
+		
+		//mainPanel.add(startBtn);
+		//mainPanel.add(stopBtn);
+		
+		nameTF.setText("Bhavya");
+		
+		pLayout.row().grid(new JLabel("Name")).add(nameTF);
+		pLayout.row().grid(new JLabel("ID")).add(idTF);
+		pLayout.emptyRow();
+		pLayout.row().center().add(startBtn,stopBtn);
+		
+		mainPanel.setBackground(Color.LIGHT_GRAY);
 		return mainPanel;
 	}
 	
@@ -65,7 +102,13 @@ public class MyAppUI implements ActionListener{
 
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
-		log.info("We received an ActionEvent " + arg0);
+		//log.info("We received an ActionEvent " + arg0);
+		if(arg0.getSource() == startBtn) {
+			System.out.println("Do start operation");
+		}else if(arg0.getSource() == stopBtn) {
+			System.out.println("Do stop operation");
+		}
+		
 		
 	}
 }
